@@ -1,0 +1,8 @@
+{
+    "instantMongo": {
+        "connections": [{
+            "name": "Drogan local",
+            "uri": "mongod:://127.0.0.1:27017"
+        }]
+    }
+}
