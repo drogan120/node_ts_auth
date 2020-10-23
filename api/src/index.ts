@@ -2,20 +2,20 @@ import mongoose from 'mongoose'
 import session from 'express-session'
 import connectRedist from 'connect-redis'
 import Redis from 'ioredis'
-import {MONGO_URI,MONGO_OPTIONS,REDIS_OPTIONS,APP_PORT} from './config'
-import {createApp} from './app'
-;(async()=>{ 
+import { MONGO_URI, MONGO_OPTIONS, REDIS_OPTIONS, APP_PORT } from './config'
+import { createApp } from './app'
+    ; (async () => {
 
-    await mongoose.connect(MONGO_URI,MONGO_OPTIONS)
+        await mongoose.connect(MONGO_URI, MONGO_OPTIONS)
 
-    const RedisStore = connectRedist(session)
+        const RedisStore = connectRedist(session)
 
-    const client = new Redis(REDIS_OPTIONS)
+        const client = new Redis(REDIS_OPTIONS)
 
-    const store  = new RedisStore({client})
+        const store = new RedisStore({ client })
 
-    const app = createApp()
+        const app = createApp(store)
 
-    app.listen(APP_PORT, () => console.log(`Server is running on http://127.0.0.1:${APP_PORT}`))
+        app.listen(APP_PORT, () => console.log(`Server is running on http://127.0.0.1:${APP_PORT}`))
 
-})()
+    })()

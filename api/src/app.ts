@@ -1,8 +1,8 @@
 import express from 'express'
-import session,{Store} from 'express-session'
-import {SESSIONS_OPTIONS} from './config'
+import session, { Store } from 'express-session'
+import { SESSIONS_OPTIONS } from './config'
 import { register } from './routes'
-export const createApp = (store:Store) => {
+export const createApp = (store: Store) => {
 
     const app = express();
 
