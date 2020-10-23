@@ -7,7 +7,7 @@ const {
 } = process.env
 
 export const REDIS_OPTIONS :RedisOptions={
-    port:REDIS_PORT,
+    port:+REDIS_PORT,
     host:REDIS_HOST,
     password:REDIS_PASSWORD
 }
