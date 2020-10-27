@@ -1,6 +1,7 @@
 import { Document, model, Schema } from 'mongoose'
 import { hash, compare } from 'bcryptjs'
 import { BCRYPT_WORK_FACTOR } from '../config'
+
 interface UserDocuments extends Document {
     email: String,
     name: String,

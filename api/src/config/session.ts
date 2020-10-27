@@ -1,7 +1,7 @@
 import { SessionOptions } from 'express-session'
 import { IN_PROD } from './app'
 const HALF_HOUR = 1000 * 60 * 30
-const {
+export const {
   SESSION_SECRET = `please keep this secret, mate`,
   SESSION_NAME = 'sid',
   SESSION_IDLE_TIMEOUT = HALF_HOUR,
