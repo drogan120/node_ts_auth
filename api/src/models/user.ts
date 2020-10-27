@@ -26,4 +26,5 @@ userSchema.methods.matchesPassword = function (password: string) {
     return compare(password, this.password)
 }
 
+userSchema.set('toJSON', { transform: (doc, { __v, password, ...rest }, opt) => rest })
 export const User = model<UserDocuments>('Users', userSchema)
