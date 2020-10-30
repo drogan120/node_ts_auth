@@ -7,6 +7,6 @@
   "license": "MIT",
   "private": false,
   "scripts": {
-    "dev": "yarn --cwd api/ dev "
+    "dev": "npm run dev --prefix api "
   }
 }
